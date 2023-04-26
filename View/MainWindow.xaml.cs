@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using Task_5_SQLite.View;
+
+namespace Task_5_SQLite
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        { 
+            if(e.ClickCount==2)
+            {
+                Application.Current.Shutdown();
+            }
+        }
+
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            new InfoWindow().Show();
+            Close();
+        }
+    }
+}
